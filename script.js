@@ -101,6 +101,8 @@ function newGame() {
     .querySelector(`.player--${activePlayer}`)
     .classList.remove('player--winner');
 
+  document.querySelector(`.player--0`).classList.add('player--active');
+
   scores = [0, 0];
   activePlayer = 0;
   currentScore = 0;
