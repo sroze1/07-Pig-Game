@@ -97,13 +97,13 @@ function newGame() {
   current0El.textContent = 0;
   current1El.textContent = 0;
   diceEl.style.display = 'none';
+  document
+    .querySelector(`.player--${activePlayer}`)
+    .classList.remove('player--winner');
 
   scores = [0, 0];
   activePlayer = 0;
   currentScore = 0;
-  document
-    .querySelector(`.player--${activePlayer}`)
-    .classList.remove('player--winner');
 }
 // FUNCTIONS FINISH
 //////////////////////////////////////////////////////////
