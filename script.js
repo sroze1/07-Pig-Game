@@ -54,6 +54,7 @@
 //
 
 // NEW ATTEMPT
+// All variables
 const player0El = document.querySelector('.player--0');
 const player1El = document.querySelector('.player--1');
 const btnNew = document.querySelector('.btn--new');
@@ -70,8 +71,10 @@ let scores = [0, 0];
 let activePlayer = 0;
 let currentScore = 0;
 let playing = true;
+// VARIABLE LIST FINISH
+//////////////////////////////////////////////////////////
 
-// Starting values
+// Starting values and functions
 score0El.textContent = 0;
 score1El.textContent = 0;
 diceEl.style.display = 'none';
@@ -99,14 +102,16 @@ function newGame() {
   activePlayer = 0;
   currentScore = 0;
 }
+// FUNCTIONS FINISH
+//////////////////////////////////////////////////////////
 
+// All event listeners:::::
 // When NEW Game is clicked:
 btnNew.addEventListener('click', newGame);
 
 // When Dice is rolled
-
 btnRoll.addEventListener('click', function () {
-    console.log(playing);
+  console.log(playing);
   if (playing) {
     diceEl.style.display = 'block';
     let roll = Math.trunc(Math.random() * 6) + 1;
@@ -123,15 +128,16 @@ btnRoll.addEventListener('click', function () {
   }
 });
 
+// When player clicks the 'hold' button
 btnHold.addEventListener('click', function () {
-    console.log(playing + 'tattay');
+  console.log(playing + 'tattay');
   if (playing) {
     // 1. Add current score to active player's score
     scores[activePlayer] += currentScore;
     document.getElementById(`score--${activePlayer}`).textContent =
       scores[activePlayer];
 
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= 100) {
       playing = false;
       document
         .querySelector(`.player--${activePlayer}`)
@@ -146,8 +152,6 @@ btnHold.addEventListener('click', function () {
     }
   }
 });
-
-console.log(playing);
 
 // scores[1] = scores[1] + currentScore
 // This way the information is stored in an array, and the activePlayer score is updated dynamically
