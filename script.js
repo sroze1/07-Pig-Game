@@ -101,7 +101,7 @@ function newGame() {
     .querySelector(`.player--${activePlayer}`)
     .classList.remove('player--winner');
 
-  document.querySelector(`.player--0`).classList.add('player--active');
+  player0El.classList.add('player--active');
 
   scores = [0, 0];
   activePlayer = 0;
@@ -142,7 +142,7 @@ btnHold.addEventListener('click', function () {
     document.getElementById(`score--${activePlayer}`).textContent =
       scores[activePlayer];
 
-    if (scores[activePlayer] >= 100) {
+    if (scores[activePlayer] >= 10) {
       playing = false;
       document
         .querySelector(`.player--${activePlayer}`)
