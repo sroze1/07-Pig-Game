@@ -96,16 +96,18 @@ function newGame() {
   score1El.textContent = 0;
   current0El.textContent = 0;
   current1El.textContent = 0;
+
   diceEl.style.display = 'none';
   document
     .querySelector(`.player--${activePlayer}`)
     .classList.remove('player--winner');
-
   player0El.classList.add('player--active');
 
   scores = [0, 0];
   activePlayer = 0;
   currentScore = 0;
+
+  playing = true;
 }
 // FUNCTIONS FINISH
 //////////////////////////////////////////////////////////
